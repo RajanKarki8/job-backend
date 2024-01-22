@@ -1,0 +1,42 @@
+ 
+{%extends 'easy_apply_job/base.html'%}
+{%block title%} List of Job {%endblock title%}
+{%block content%}
+
+<div class = 'text-center'><p>Total Jobs Found: {{ jobs|length }}</p></div>
+{%for job in jobs%}
+
+<div class = 'content'>
+<h3 class="heading">{{job.title}}</h3>
+<hr>
+{%if job.user%}
+by - {{job.user}}
+{%endif%}
+
+<p class="lead">
+    <i class="fa-solid fa-calendar-days icon"></i> {{job.date_posted|date:'F d, Y'}}
+</p> 
+<p class = "lead">
+    <i class="fa-solid fa-location-dot icon"></i> {{job.location}} 
+</p>
+
+{%if job.job_type%}
+
+    {{job.type}}
+
+{%endif%}
+<p class = "description">{{job.description}}</p>
+
+<hr>
+
+<a href="{%url 'job-detail' job.id%}">see details</a> 
+
+<a href="{%url 'apply' job.id%}">Apply</a> 
+
+</div>
+
+{%endfor%}
+
+<hr>
+{%endblock content%}
+

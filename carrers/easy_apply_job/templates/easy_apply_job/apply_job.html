@@ -1,0 +1,37 @@
+
+
+{%extends 'easy_apply_job/base.html'%}
+<div class = 'content'>
+{%block content%}
+
+    <h2>Apply for -- {{job.title}}</h2>
+<form action="" method="POST" class = 'mt-4 ml-3 mr-2' enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class = "form-group">
+        <div class = "mb4">
+            <div class="col-lg-1">
+                <p class = 'is-mb2'>{{form.as_p}}</p>
+                <button type = 'submit' class = 'btn btn-primary'>Apply Job</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+{%endblock content%}
+</div>
+{% comment %} {%extends 'easy_apply_job/base.html'%}
+
+{%block content%}
+<div class = 'container'>
+    <h2>Apply for -- {{job.title}}</h2>
+
+<form action="" class = 'form-group' method="POST">
+    {%csrf_token%}
+    {{form.as_p}}
+
+    <input type= "submit" value = 'apply'>
+
+</form>
+</div>
+
+{%endblock content%} {% endcomment %}

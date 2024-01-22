@@ -1,0 +1,17 @@
+{%extends 'easy_apply_job/base.html'%}
+
+{%block content%}
+<h2>Applied Job</h2>
+
+{%for job in appliedjob%}
+
+<div class = "border border-primary m-4 p-2">
+    <div class = "section">
+        <h5>{{job.title}}</h5>
+        <p>{{job.resume}}</p>
+    </div>
+</div>
+
+{%endfor%}
+
+{%endblock content%}

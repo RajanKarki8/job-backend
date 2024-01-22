@@ -1,0 +1,30 @@
+
+{%extends 'easy_apply_job/base.html'%}
+
+{%block content%}
+<div class="detail-content">
+    
+   
+    <h3 class="title">{{job.title}}</h3>
+    <p class="action-checkbox">on--{{job.date_posted|date:'F d, Y'}}</p>
+    <p>{{job.location}}</p>
+    <div class = 'desp'>
+    <strong>Job Description</strong>
+    
+    <p class = "description">{{job.description}}</p>
+    </div>
+    <hr>
+   
+    <strong>Requirements</strong>
+    
+    <div class = 'req'>
+        <pre>{{job.requirements}}</pre>
+    </div>
+
+    <hr>
+ 
+    <button class = 'btn-btn-primary btn-sm'><a href="{%url 'apply' job.id%}">Apply</a></button> 
+   
+</div>
+
+{%endblock content%}
